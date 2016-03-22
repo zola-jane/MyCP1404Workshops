@@ -1,17 +1,30 @@
-# original code
-lower = 10
-upper = 100
+def main():
+    lower = 10
+    upper = 50
+    number = get_number(lower, upper)
 
-print("Enter a number (" + str(lower) + "-" + str(upper) + "):")
+    # adjust to remove whitespace around the user's input string
+    # word = "Hello!..."
+    # print(word.strip(".!"))  # strips !...
 
-# rewrite with string formatting
+    # write code that displays a table with two columns for ASCII and character
+    # for i in range(10, 120, 11):  # make sure we have integers of different length
+    #     print("{:^4d} | {:^4s}".format(i, chr(i)))
 
-print("Enter a number ({}-{}:)" .format(lower,upper))
 
-# adjust to remove whitespace around the user's input string
-# word = "Hello!..."
-# print(word.strip(".!"))  # strips !...
+def get_number(lower, upper):
+    finished = False
+    while not finished:
+        try:
+            num = int(input("Enter a number ({}-{}):".format(lower,upper)))
+            if num < lower or num > upper:
+                print("Enter a valid number!")
+            else:
+                finished = True
+        except:
+            print("Enter a valid number!")
+    return num
 
-# write code that displays a table with two columns for ASCII and character
-for i in range(10, 120, 11):    # make sure we have integers of different length
-    print("{:^4d} | {:^4s}".format(i, chr(i)))
+
+
+main()
