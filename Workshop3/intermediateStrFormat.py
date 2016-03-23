@@ -16,19 +16,18 @@ def main():
 def get_number(lower, upper):
 
     if lower >= upper:
-        print("The value for lower is greater than or equal to the upper value.")
         lower = upper
-
-    finished = False
-    while not finished:
-        try:
-            num = int(input("Enter a number ({}-{}):".format(lower,upper)))
-            if num < lower or num > upper:
+    else:
+        finished = False
+        while not finished:
+            try:
+                num = int(input("Enter a number ({}-{}):".format(lower,upper)))
+                if num < lower or num > upper:
+                    print("Enter a valid number!")
+                else:
+                    finished = True
+            except:
                 print("Enter a valid number!")
-            else:
-                finished = True
-        except:
-            print("Enter a valid number!")
-    return num
+        return num
 
 main()
