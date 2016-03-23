@@ -1,9 +1,19 @@
-print("Temperature Conversion Program")
+def main():
+    print("Temperature Conversion Program")
 
-celsiusValue = float(input("Enter Celsius value:"))
-fahrenheitValue = celsiusValue * 9/5 +32
-kelvinValue= celsiusValue + 273.15
+    celsiusValue = float(input("Enter Celsius value:"))
+    print("Celsius Value: {} degrees Celsius".format(celsiusValue))
+    print("Fahrenheit Value: {} degrees Fahrenheit".format(calc_fahrenheit(celsiusValue)))
+    print("Kelvin Value: {} Kelvin".format(calc_kelvin(celsiusValue)))
 
-print("Celsius Value:", celsiusValue)
-print("Fahrenheit Value:", fahrenheitValue)
-print("Kelvin Value:", kelvinValue)
+
+def calc_fahrenheit(celsius):
+    fahrenheit = celsius * 9 / 5 + 32
+    return fahrenheit
+
+
+def calc_kelvin(celsius):
+    kelvin = celsius + 273.15
+    return kelvin
+
+main()

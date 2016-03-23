@@ -1,11 +1,23 @@
-print("Area Calculator")
+def main():
+    print("Area of a Rectangle Calculator")
 
-width = int(input("Enter width:"))
-height = int(input("Enter height:"))
-depth = int(input("Enter depth:"))
+    width = int(input("Enter width in m:"))
+    height = int(input("Enter height in m:"))
+    depth = int(input("Enter depth in m:"))
 
-area = width * height
-volume = area * depth
+    area = calc_area(width,height)
+    volume = calc_volume(area,depth)
+    print("Area: {} m ^2\nVolume: {} m^3".format(area,volume))
 
-print("Area:", area, "Volume:", volume)
 
+def calc_area(w,h):
+    a = w * h
+    return a
+
+
+def calc_volume(a,d):
+    v = a * d
+    return v
+
+
+main()
