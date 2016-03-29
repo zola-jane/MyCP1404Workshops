@@ -5,15 +5,18 @@ Each line consists of siz random numbers between 1 and 45
 Each line should not contain any repeated number.
 Each line of numbers should be displayed in ascending order.
 """
-def main():
 
-    lottery_numbers = []
+
+def main():
+    # lottery_numbers = []
     quick_pick = int(input("How many quick picks?"))
 
     for pick in range(quick_pick):
-        print(get_random_numbers(lottery_numbers))
+        lottery_numbers = get_random_numbers()
+        print("{}".format(" ".join(str(i) for i in lottery_numbers)))
 
-def get_random_numbers(number):
+
+def get_random_numbers():
     import random
     numbers = []
     for number in range(6):
@@ -22,5 +25,6 @@ def get_random_numbers(number):
             number = random.randint(1, 45)
         numbers.append(number)
     return numbers
+
 
 main()
